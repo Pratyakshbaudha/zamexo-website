@@ -20,7 +20,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[90vh] bg-white overflow-hidden">
+    <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[90vh] bg-[#0B1C2D]/95 overflow-hidden">
       
       {/* Slides */}
       {slides.map((img, i) => (

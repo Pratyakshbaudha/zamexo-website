@@ -170,116 +170,103 @@ export default function GSTNoticeReplyPage() {
 
       {/* ===== LEAD FORM ===== */}
       {/* ===== LEAD FORM (IMAGE LEFT • FORM RIGHT) ===== */}
-<section className="max-w-7xl mx-auto px-6 py-24">
-  <div className="bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
+{/* ===== CONSULTATION INFO CARD (NO FORM) ===== */}
+<section className="bg-gray-50 py-20 px-6">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 
-    {/* LEFT IMAGE */}
-    <div className="relative hidden md:block">
-      <img
-        src="/images/gst-consulting.jpg"   // 👉 yaha professional image rakho
-        alt="GST Expert Consultation"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0  flex items-end p-10">
-       
-      </div>
+    {/* LEFT CONTENT */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-6">
+        Get Expert Help for GST Notice Reply
+      </h2>
+
+      <p className="text-gray-600 text-lg leading-relaxed mb-6">
+        Received a GST notice? Don’t panic. ZAMEXO’s Chartered Accountants and GST
+        experts analyze your notice, identify risks, and prepare a legally
+        compliant reply to protect you from penalties and registration
+        cancellation.
+      </p>
+
+      <ul className="space-y-4 text-gray-700">
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          Reply drafted by CA & GST Experts
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          Protection from penalties & recovery
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          GST registration cancellation prevention
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          Pan-India online notice reply support
+        </li>
+      </ul>
     </div>
 
-    {/* RIGHT FORM */}
-    <div className="p-8 md:p-12">
+    {/* RIGHT CARD */}
+    <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
+      <h3 className="text-2xl font-bold text-[#0B1C2D] mb-4">
+        Free GST Notice Consultation
+      </h3>
 
-      {/* Heading */}
-      <div className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-2">
-          Upload GST Notice for Expert Review
-        </h2>
-        <p className="text-gray-600">
-          Share your GST notice and get professional guidance from CA experts.
-        </p>
+      <p className="text-gray-600 leading-relaxed mb-6">
+        Speak directly with our GST specialists to understand the notice type,
+        risk level, required documents, and the best reply strategy — before any
+        deadline is missed.
+      </p>
+
+      <div className="space-y-4 mb-8">
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            Scrutiny, SCN, DRC-01 & Cancellation Notices
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            ITC mismatch, late filing & demand cases
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            Drafting + GST portal reply filing support
+          </p>
+        </div>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="grid gap-5"
-      >
-        {/* Name */}
-        <div className="grid gap-1">
-          <label className="text-sm font-medium text-gray-700">Full Name</label>
-          <input
-            name="name"
-            onChange={handleChange}
-            placeholder="Enter your full name"
-            className="border border-gray-300 p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
-            required
-          />
-        </div>
-
-        {/* Email */}
-        <div className="grid gap-1">
-          <label className="text-sm font-medium text-gray-700">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            onChange={handleChange}
-            placeholder="example@email.com"
-            className="border border-gray-300 p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
-            required
-          />
-        </div>
-
-        {/* Phone */}
-        <div className="grid gap-1">
-          <label className="text-sm font-medium text-gray-700">Mobile Number</label>
-          <input
-            name="phone"
-            onChange={handleChange}
-            placeholder="10 digit mobile number"
-            className="border border-gray-300 p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
-            required
-          />
-        </div>
-
-        {/* City */}
-        <div className="grid gap-1">
-          <label className="text-sm font-medium text-gray-700">City</label>
-          <input
-            name="city"
-            onChange={handleChange}
-            placeholder="Your city"
-            className="border border-gray-300 p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
-          />
-        </div>
-
-        {/* Message */}
-        <div className="grid gap-1">
-          <label className="text-sm font-medium text-gray-700">
-            Brief About Your GST Notice
-          </label>
-          <textarea
-            name="message"
-            onChange={handleChange}
-            placeholder="Example: ITC mismatch, late return, demand notice etc."
-            rows={4}
-            className="border border-gray-300 p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50 resize-none"
-          />
-        </div>
-
-        {/* Submit */}
-        <button
-          type="submit"
-          className="mt-3 bg-[#D4AF37] text-[#0B1C2D] py-3.5 rounded-xl font-semibold hover:bg-yellow-400 transition flex items-center justify-center gap-2 shadow-md"
+      {/* CTA */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a
+          href="/contact"
+          className="flex-1 text-center bg-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-yellow-400 transition"
         >
-          <Send size={18} /> Submit for Expert Review
-        </button>
+          Talk to GST Expert
+        </a>
 
-        {/* Trust */}
-        <p className="text-xs text-center text-gray-500 mt-1">
-          🔒 100% Confidential • No spam calls
-        </p>
-      </form>
+        <a
+          href="tel:+91XXXXXXXXXX"
+          className="flex-1 text-center border border-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-[#D4AF37]/10 transition"
+        >
+          Call Now
+        </a>
+      </div>
+
+      <p className="text-xs text-gray-500 mt-6 text-center">
+        🔒 100% Confidential | No Obligation | CA Verified Guidance
+      </p>
     </div>
+
   </div>
 </section>
+
 
 
       {/* ===== CTA ===== */}

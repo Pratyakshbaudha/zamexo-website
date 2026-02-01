@@ -1,193 +1,183 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Headset, Building2 } from "lucide-react";
+import { useState } from "react";
+
+const servicesData = {
+  GST: ["Registration", "Monthly Returns", "Notice Reply"],
+  "Income Tax": ["ITR Filing", "Scrutiny Support"],
+  "Company & Compliance": [
+    "Company Formation",
+    "ROC Filings",
+    "PF / ESIC / MSME / IEC",
+    "Trademark",
+  ],
+  "Business Support": ["Bookkeeping", "Payroll", "Virtual CFO"],
+};
+
+const inputClass =
+  "w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]";
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    inquiry: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: form.inquiry,
+          message: form.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        alert("✅ Message sent successfully!");
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          inquiry: "",
+          message: "",
+        });
+      } else {
+        alert("❌ " + (data.error || "Failed to send message"));
+      }
+    } catch {
+      alert("❌ Network / Server error");
+    }
+
+    setLoading(false);
+  };
+
   return (
-    <main className="bg-white">
-      {/* ================= HERO ================= */}
-      <section className="bg-[#0B1C2D] text-white py-24 text-center px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-5"
-        >
+    <main className="bg-gray-50">
+      {/* HERO */}
+      <section className="bg-[#0B1C2D] text-white py-24 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Contact ZAMEXO Tax Solutions
-        </motion.h1>
-        <p className="max-w-3xl mx-auto text-gray-300 text-lg">
-          Have questions about tax filing, compliance or franchise opportunity?
-          Our experts are here to help you.
+        </h1>
+        <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+          Trusted Pan-India tax & compliance partner for businesses and startups.
         </p>
       </section>
 
-      {/* ================= CONTACT INFO ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-3 gap-10">
-          {/* HO DETAILS */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 5, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white border rounded-2xl shadow-xl p-8"
-          >
-            <Building2 className="text-[#D4AF37] mb-4" size={34} />
-            <h3 className="font-bold text-lg mb-2 text-[#0B1C2D]">
+      {/* MAP + FORM */}
+      <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16">
+        {/* LEFT */}
+        <div className="space-y-8">
+          <div className="rounded-3xl overflow-hidden shadow-xl h-[420px]">
+            <iframe
+              src="https://www.google.com/maps?q=Sector+62+Noida&output=embed"
+              className="w-full h-full border-0"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl shadow p-6 border-l-4 border-[#D4AF37]">
+            <h3 className="text-xl font-bold text-[#0B1C2D] mb-2">
               Head Office
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              ZAMEXO Tax Solutions Pvt. Ltd.
-              <br />
-              3rd Floor, Business Tower,
-              <br />
-              Sector 62, Noida, Uttar Pradesh – 201309
+            <p className="text-gray-600 text-sm">
+              ZAMEXO Tax Solutions Pvt. Ltd. <br />
+              Sector 62, Noida – 201309 <br />
+              Email: <b>info@zamexo.in</b>
             </p>
-          </motion.div>
-
-          {/* CONTACT */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-white border rounded-2xl shadow-xl p-8"
-          >
-            <Headset className="text-[#D4AF37] mb-4" size={34} />
-            <h3 className="font-bold text-lg mb-2 text-[#0B1C2D]">
-              Customer Support
-            </h3>
-
-            <div className="flex items-center gap-3 text-sm text-gray-600 mb-2">
-              <Phone size={16} /> +91 9XXXXXXXXX
-            </div>
-            <div className="flex items-center gap-3 text-sm text-gray-600 mb-2">
-              <Mail size={16} /> support@zamexo.in
-            </div>
-            <div className="flex items-center gap-3 text-sm text-gray-600">
-              <Clock size={16} /> Mon – Sat | 10:00 AM – 7:00 PM
-            </div>
-          </motion.div>
-
-          {/* LOCATION */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-white border rounded-2xl shadow-xl p-8"
-          >
-            <MapPin className="text-[#D4AF37] mb-4" size={34} />
-            <h3 className="font-bold text-lg mb-2 text-[#0B1C2D]">
-              Service Coverage
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Serving clients across India with centralized processing and
-              online consultation support in 30+ cities.
-            </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
 
-      {/* ================= MAP + FORM ================= */}
-      <section className="bg-gray-50 py-24 pt-10">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-start">
-          {/* MAP */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-xl h-[420px]"
-          >
-            <iframe
-              className="w-full h-full border-0 "
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Sector+62+Noida&output=embed"
+        {/* RIGHT */}
+        <div className="bg-white rounded-3xl shadow-2xl p-10">
+          <h2 className="text-2xl font-bold mb-4 text-[#0B1C2D]">
+            Send Us Your Query
+          </h2>
+
+          <form onSubmit={handleSubmit} className="grid gap-5">
+            <input
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Full Name"
+              required
+              className={inputClass}
             />
-          </motion.div>
 
-          {/* FORM */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-2xl p-10"
-          >
-            <h2 className="text-2xl font-bold mb-6 text-[#0B1C2D]">
-              Send Us Your Query
-            </h2>
+            <input
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              placeholder="Mobile Number"
+              required
+              className={inputClass}
+            />
 
-            <form className="grid grid-cols-1 gap-5">
-              <input
-                className="w-full border border-gray-300 rounded-lg p-4 
-text-gray-800 placeholder-gray-500 bg-white
-focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Full Name"
-              />
+            <input
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Email Address"
+              required
+              className={inputClass}
+            />
 
-              <input
-                className="w-full border border-gray-300 rounded-lg p-4 
-text-gray-800 placeholder-gray-500 bg-white
-focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Mobile Number"
-              />
+            <select
+              name="inquiry"
+              value={form.inquiry}
+              onChange={handleChange}
+              required
+              className={inputClass}
+            >
+              <option value="">Select Service</option>
+              {Object.entries(servicesData).map(([category, items]) => (
+                <optgroup key={category} label={category}>
+                  {items.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
 
-              <input
-                className="w-full border border-gray-300 rounded-lg p-4 
-text-gray-800 placeholder-gray-500 bg-white
-focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Email Address"
-              />
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              rows={5}
+              placeholder="Write your message..."
+              required
+              className={inputClass}
+            />
 
-              <select
-                className="w-full border border-gray-300 rounded-lg p-4 
-  text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400 "
-              >
-                <option>Select Inquiry Type</option>
-                <option>Tax Filing</option>
-                <option>Business Registration</option>
-                <option>Accounting Services</option>
-                <option>Franchise Opportunity</option>
-                <option>Other</option>
-              </select>
-
-              <textarea
-                rows={4}
-                className="w-full border border-gray-300 rounded-lg p-4 
-text-gray-800 placeholder-gray-500 bg-white
-focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Write your message..."
-              />
-
-              <button
-                type="submit"
-                className="bg-[#D4AF37] text-[#0B1C2D] py-4 rounded-xl font-bold hover:bg-yellow-400 transition"
-              >
-                Submit Request
-              </button>
-            </form>
-          </motion.div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-[#D4AF37] text-[#0B1C2D] py-4 rounded-xl font-bold hover:bg-yellow-400 transition"
+            >
+              {loading ? "Sending..." : "Submit Request"}
+            </button>
+          </form>
         </div>
-      </section>
-
-      {/* ================= FINAL CTA ================= */}
-      <section className="bg-[#0B1C2D] py-20 text-center text-white px-6">
-        <h2 className="text-3xl font-bold mb-4">
-          Prefer Talking to an Expert?
-        </h2>
-
-        <p className="max-w-2xl mx-auto mb-8 text-gray-300">
-          Call or WhatsApp us for immediate assistance and business
-          consultation.
-        </p>
-
-        <a
-          href="tel:+919XXXXXXXXX"
-          className="inline-block bg-[#D4AF37] text-[#0B1C2D] px-10 py-4 rounded-xl font-bold hover:bg-yellow-400 transition"
-        >
-          Call Now
-        </a>
       </section>
     </main>
   );

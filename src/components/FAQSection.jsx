@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const faqs = [
@@ -55,8 +54,7 @@ const faqs = [
     a: "Yes, we assist with company registration, LLP registration, MSME (Udyam) registration, and other business setup services."
   }
 ];
-
-
+  
 export default function FAQSection() {
   const [open, setOpen] = useState(null);
   const [showAll, setShowAll] = useState(false);
@@ -68,21 +66,22 @@ export default function FAQSection() {
       <div className="max-w-5xl mx-auto px-6">
 
         {/* Support Line */}
-        <p className="text-center text-gray-600 mb-6 pt-0 pb-10 text-4xl text-bold">
+        <p className="text-center text-gray-600 mb-6 pt-0 pb-10 text-4xl font-bold">
           For additional assistance, contact our customer support or visit our FAQ section.
         </p>
+
         <div className="flex justify-center mb-10">
-  <Image
-    src="/images/faq-banner.png"
-    alt="Customer Support"
-    width={320}
-    height={180}
-    className="rounded-2xl shadow-lg"
-  />
-</div>
+          <Image
+            src="/images/faq-banner.png"
+            alt="Customer Support"
+            width={320}
+            height={180}
+            className="rounded-2xl shadow-lg"
+          />
+        </div>
 
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center mb-3 text-[#0B1C2D] pb-15">
+        <h2 className="text-4xl font-bold text-center mb-3 text-[#0B1C2D]">
           Trusted by <span className="text-red-600">1 Million+</span> Individuals and Businesses in India
         </h2>
 
@@ -111,19 +110,11 @@ export default function FAQSection() {
                 )}
               </button>
 
-              <AnimatePresence>
-                {open === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-5 text-gray-600"
-                  >
-                    {item.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {open === i && (
+                <div className="px-6 pb-5 text-gray-600">
+                  {item.a}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -137,6 +128,7 @@ export default function FAQSection() {
             {showAll ? "View Less" : "View More"}
           </button>
         </div>
+
       </div>
     </section>
   );

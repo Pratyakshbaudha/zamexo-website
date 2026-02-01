@@ -195,7 +195,7 @@ export default function PayrollPage() {
       </section>
 
       {/* ===== LEAD FORM ===== */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
+      {/* <section className="max-w-4xl mx-auto px-6 py-24">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-3">
             Get Expert Payroll Support Now
@@ -252,8 +252,8 @@ export default function PayrollPage() {
             🔒 Your data is fully confidential and secure.
           </p>
         </form>
-      </section>
-
+      </section> */}
+  
       {/* ===== FINAL CTA ===== */}
       <section className="bg-[#0B1C2D] text-white py-20 text-center px-6">
         <h3 className="text-3xl font-bold mb-4">

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { IndianRupee, TrendingUp, Users, Briefcase } from "lucide-react";
 import Link from "next/link";
 
@@ -10,13 +9,9 @@ export default function EarningsPage() {
 
       {/* HERO */}
       <section className="bg-[#0B1C2D] text-white py-24 px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-4"
-        >
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Franchise Earnings Potential
-        </motion.h1>
+        </h1>
         <p className="max-w-2xl mx-auto text-gray-300">
           Build a profitable tax & compliance business with ZAMEXO’s trusted brand,
           systems and national support.

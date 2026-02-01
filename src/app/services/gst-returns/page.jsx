@@ -120,7 +120,7 @@ export default function GSTReturnsPage() {
       {
         title: "Submit Your GST Data",
         desc: "Submit your sales invoices, purchase bills, bank statements (if required), and GST login details securely via our encrypted online portal or official WhatsApp support. Our dedicated compliance team verifies every document for completeness and maintains strict confidentiality protocols to protect your business data from day one.Share your sales invoices, purchase details, and GST credentials securely through our online system or WhatsApp. Our team ensures complete data confidentiality and accuracy from day one.",
-        img: "/images/upload-docs.png",
+        img: "/images/upload-docs.webp",
       },
       {
         title: "Expert Reconciliation by CAs",
@@ -187,26 +187,20 @@ export default function GSTReturnsPage() {
   </div>
 </section>
       {/* CONTACT FORM */}
-      <section className="bg-gray-50 py-20 px-6 pt-0.5">
+     {/* CONSULTATION INFO CARD (NO FORM) */}
+<section className="bg-gray-50 py-20 px-6 pt-0.5">
   <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 
-    {/* LEFT CONTENT */}
+    {/* LEFT CONTENT (SAME AS BEFORE) */}
     <div>
-      <h2
-        className="
-          text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-6
-          transition-all duration-500 ease-out
-          hover:text-[#D4AF37]
-        "
-      >
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-6">
         Get Started with Hassle-Free GST Returns
       </h2>
 
       <p className="text-gray-600 text-lg leading-relaxed mb-6">
         Partner with ZAMEXO’s experienced GST professionals for accurate, timely,
-        and fully compliant GST return filing. Whether you are a small business,
-        startup, or growing enterprise, we simplify your compliance so you can
-        focus on running your business.
+        and fully compliant GST return filing. We simplify GST compliance so you
+        can focus on growing your business.
       </p>
 
       <ul className="space-y-4 text-gray-700">
@@ -224,77 +218,71 @@ export default function GSTReturnsPage() {
         </li>
         <li className="flex items-start gap-3">
           <span className="text-[#D4AF37] text-xl">✔</span>
-          Pan-India Online Service with Fast Turnaround
+          Pan-India Online Service
         </li>
       </ul>
     </div>
 
-    {/* RIGHT FORM */}
-    <div className="bg-white border rounded-2xl shadow-xl p-8 md:p-10">
-      <h3 className="text-2xl font-bold text-[#0B1C2D] mb-6 text-center">
-        Request Free GST Consultation
+    {/* RIGHT PROFESSIONAL CARD */}
+    <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
+      <h3 className="text-2xl font-bold text-[#0B1C2D] mb-4">
+        Free GST Consultation by Experts
       </h3>
 
-      <form onSubmit={handleSubmit} className="grid gap-5">
-        <input
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Full Name"
-          className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-          required
-        />
+      <p className="text-gray-600 leading-relaxed mb-6">
+        Speak directly with our GST specialists and Chartered Accountants to
+        understand your return filing requirements, deadlines, ITC eligibility,
+        and compliance risks — absolutely free.
+      </p>
 
-        <input
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email Address"
-          className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-          required
-        />
+      <div className="space-y-4 mb-8">
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            Applicable for Regular, Composition & Nil Returns
+          </p>
+        </div>
 
-        <input
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Mobile Number"
-          className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-          required
-        />
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            Guidance on GSTR-1, GSTR-3B & Annual Returns
+          </p>
+        </div>
 
-        <input
-          name="city"
-          value={formData.city}
-          onChange={handleChange}
-          placeholder="City"
-          className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-        />
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            ITC reconciliation & mismatch resolution support
+          </p>
+        </div>
+      </div>
 
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Tell us about your GST filing requirements"
-          rows={4}
-          className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-        />
-
-        <button
-          type="submit"
-          className="
-            bg-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold
-            hover:bg-yellow-400 transition-all duration-300
-            flex items-center justify-center gap-2
-          "
+      {/* CTA BUTTONS */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a
+          href="/contact"
+          className="flex-1 text-center bg-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-yellow-400 transition"
         >
-          <Send size={18} /> Submit Request
-        </button>
-      </form>
+          Talk to GST Expert
+        </a>
+
+        <a
+          href="tel:+91XXXXXXXXXX"
+          className="flex-1 text-center border border-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-[#D4AF37]/10 transition"
+        >
+          Call Now
+        </a>
+      </div>
+
+      <p className="text-xs text-gray-500 mt-6 text-center">
+        🔒 100% Confidential | No Obligation | Trusted by Businesses Across India
+      </p>
     </div>
 
   </div>
 </section>
+
 
       {/* CTA */}
       <section className="bg-[#0B1C2D] text-white py-20 text-center px-6">

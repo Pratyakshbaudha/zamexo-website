@@ -59,15 +59,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/logo/logo-light2.png"
-              alt="Zamexo Logo"
-              width={150}
-              height={75}
-              priority
-            />
-          </Link>
+  <Link href="/" className="flex items-center gap-2 pt-2">
+  <Image
+    className="mt-1 "
+    src="/images/logo-light2.png"
+    alt="Zamexo Logo"
+    width={130}
+    height={70}
+    priority
+  />
+</Link>
 
           {/* DESKTOP MENU */}
           <nav className="hidden md:flex items-center gap-8 text-white font-medium">
@@ -135,12 +136,12 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
 
             {/* LOGIN / SIGNUP */}
-            <Link
+            {/* <Link
               href="/login"
               className="border border-white px-5 py-2 rounded-lg font-semibold text-white hover:bg-white hover:text-[#0B1C2D] transition"
             >
               Login / Signup
-            </Link>
+            </Link> */}
 
             {/* SUPPORT BUTTON */}
             <Link
@@ -153,9 +154,13 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE MENU BUTTON */}
-          <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
-            {open ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <button
+  className="md:hidden text-white p-2 mr-1 relative z-50"
+  onClick={() => setOpen(!open)}
+>
+  {open ? <X size={28} /> : <Menu size={28} />}
+</button>
+
 
         </div>
       </div>
@@ -205,18 +210,18 @@ export default function Navbar() {
 
             {/* MOBILE ACTIONS */}
             <div className="mt-4 flex flex-col gap-2">
-              <Link
+              {/* <Link
                 onClick={() => setOpen(false)}
                 href="/login"
                 className="border border-white text-center py-2 rounded-lg font-semibold"
               >
                 Login / Signup
-              </Link>
+              </Link> */}
 
               <Link
                 onClick={() => setOpen(false)}
                 href="/support"
-                className="border border-[#D4AF37] text-[#D4AF37] text-center py-2 rounded-lg font-semibold hover:bg-[#D4AF37] hover:text-[#0B1C2D] transition"
+                className="border border-[#998b5c] text-[#D4AF37] text-center py-2 rounded-lg font-semibold hover:bg-[#D4AF37] hover:text-[#0B1C2D] transition"
               >
                 Support
               </Link>

@@ -51,7 +51,7 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <section className="bg-white py-28">
+      <section className="bg-white py-28">
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* ===== Heading ===== */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#0B1C2D]">
@@ -82,10 +82,11 @@ export default function TestimonialSlider() {
                 <div className="absolute -top-12 left-1/2 -translate-x-1/2">
                   <div className="w-24 h-24 rounded-full bg-purple-100 flex items-center justify-center shadow-lg">
                     <Image
-                      src="/images/avatar.png"
+                      src="/images/avatar.webp"
                       alt="user"
                       width={70}
                       height={70}
+                      unoptimized 
                     />
                   </div>
                 </div>

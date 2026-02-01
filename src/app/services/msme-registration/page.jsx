@@ -152,64 +152,97 @@ export default function MSMERegistrationPage() {
   </div>
 </section>
 
-{/* ================= LEAD FORM ================= */}
-<section className="max-w-4xl mx-auto py-28 px-6">
-  <div className="text-center mb-10">
-    <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-3">
-      Apply for MSME Registration Now
-    </h2>
-    <p className="text-gray-600 max-w-2xl mx-auto">
-      Fill in your details and our MSME experts will contact you shortly for smooth
-      and hassle-free registration.
-    </p>
+
+{/* ================= MSME CONSULTATION INFO (NO FORM) ================= */}
+<section className="bg-gradient-to-br from-gray-50 to-white py-28 px-6">
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    {/* LEFT CONTENT */}
+    <div>
+      <span className="inline-block mb-4 px-4 py-1 text-sm font-semibold rounded-full bg-[#D4AF37]/10 text-[#0B1C2D]">
+        MSME Advisory Services
+      </span>
+
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-6 leading-tight">
+        Get Expert Assistance for MSME (Udyam) Registration
+      </h2>
+
+      <p className="text-gray-600 text-lg leading-relaxed mb-6">
+        MSME (Udyam) registration may look simple, but incorrect classification,
+        wrong details or missed eligibility can lead to rejection or loss of
+        government benefits. ZAMEXO’s compliance experts ensure your MSME
+        registration is accurate, compliant and future-ready.
+      </p>
+
+      <ul className="space-y-4 text-gray-700">
+        {[
+          "Expert-assisted MSME (Udyam) registration",
+          "Correct classification based on turnover & investment",
+          "Eligibility check for subsidies & schemes",
+          "Pan-India online support for all business types",
+        ].map((item, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <span className="mt-1 w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* RIGHT CARD */}
+    <div className="relative">
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#D4AF37] to-yellow-400 opacity-20 blur" />
+      
+      <div className="relative bg-white border border-gray-200 rounded-3xl shadow-2xl p-10">
+        <h3 className="text-2xl font-bold text-[#0B1C2D] mb-4">
+          Free MSME Consultation
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed mb-8">
+          Speak directly with our MSME specialists to understand eligibility,
+          benefits, documentation and post-registration advantages — before
+          applying on the government portal.
+        </p>
+
+        <div className="space-y-4 mb-10">
+          {[
+            "MSME eligibility & turnover assessment",
+            "Registration for proprietorship, LLP & companies",
+            "Guidance on loans, subsidies & government schemes",
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+              <p className="text-gray-700">{item}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="grid sm:grid-cols-2 gap-4">
+          <a
+            href="/contact"
+            className="text-center bg-[#D4AF37] text-[#0B1C2D] py-3.5 rounded-xl font-semibold hover:bg-yellow-400 transition"
+          >
+            Talk to MSME Expert
+          </a>
+
+          <a
+            href="tel:+91XXXXXXXXXX"
+            className="text-center border border-[#D4AF37] text-[#0B1C2D] py-3.5 rounded-xl font-semibold hover:bg-[#D4AF37]/10 transition"
+          >
+            Call Now
+          </a>
+        </div>
+
+        <p className="text-xs text-gray-500 mt-6 text-center">
+          🔒 100% Confidential | No Obligation | Expert-Verified Guidance
+        </p>
+      </div>
+    </div>
+
   </div>
-
-  <form className="bg-white p-10 md:p-12 rounded-2xl shadow-xl border grid gap-6">
-    <div>
-      <label className="text-sm font-medium">Full Name</label>
-      <input name="name" onChange={handleChange} placeholder="Enter your full name"
-        className="w-full border mt-1 p-3 rounded focus:ring-2 focus:ring-[#D4AF37]/50"/>
-    </div>
-
-    <div>
-      <label className="text-sm font-medium">Mobile Number</label>
-      <input name="phone" onChange={handleChange} placeholder="Enter your mobile number"
-        className="w-full border mt-1 p-3 rounded focus:ring-2 focus:ring-[#D4AF37]/50"/>
-    </div>
-
-    <div>
-      <label className="text-sm font-medium">Email Address</label>
-      <input name="email" onChange={handleChange} placeholder="Enter your email"
-        className="w-full border mt-1 p-3 rounded focus:ring-2 focus:ring-[#D4AF37]/50"/>
-    </div>
-
-    <div>
-      <label className="text-sm font-medium">City</label>
-      <input name="city" onChange={handleChange} placeholder="Your city"
-        className="w-full border mt-1 p-3 rounded focus:ring-2 focus:ring-[#D4AF37]/50"/>
-    </div>
-
-    <div>
-      <label className="text-sm font-medium">Business Type</label>
-      <select name="business" onChange={handleChange}
-        className="w-full border mt-1 p-3 rounded focus:ring-2 focus:ring-[#D4AF37]/50">
-        <option>Select Business Type</option>
-        <option>Proprietorship</option>
-        <option>Partnership</option>
-        <option>LLP</option>
-        <option>Private Limited</option>
-      </select>
-    </div>
-
-    <button className="bg-[#D4AF37] text-[#0B1C2D] py-3.5 rounded-xl font-semibold flex justify-center gap-2 items-center">
-      <Send size={18}/> Submit Application
-    </button>
-
-    <p className="text-xs text-center text-gray-500">
-      🔒 Your information is safe & confidential.
-    </p>
-  </form>
 </section>
+
 
 {/* ================= CTA ================= */}
 <section className="bg-gray-900 text-white py-20 text-center px-6">

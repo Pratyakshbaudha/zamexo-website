@@ -195,64 +195,52 @@ export default function BookkeepingPage() {
       </section>
 
       {/* ===== LEAD FORM ===== */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-3">
-            Get Professional Bookkeeping Support Now
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Submit your details and our experts will help you maintain accurate financial records and stay compliant.
-          </p>
-        </div>
+      {/* ===== CONTACT CTA ===== */}
+<section className="bg-gradient-to-r from-[#0B1C2D] to-blue-900 py-24 px-6">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-xl grid gap-5"
-        >
-          {[
-            ["name", "Full Name"],
-            ["email", "Email Address"],
-            ["phone", "Mobile Number"],
-            ["company", "Company Name"],
-            ["turnover", "Annual Turnover (₹)"],
-          ].map((f, i) => (
-            <div key={i} className="grid gap-1">
-              <label className="text-sm font-medium text-gray-700">{f[1]}</label>
-              <input
-                name={f[0]}
-                onChange={handleChange}
-                placeholder={`Enter ${f[1].toLowerCase()}`}
-                className="border border-gray-300 p-3.5 rounded-lg focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none"
-                required
-              />
-            </div>
-          ))}
+    {/* LEFT CONTENT */}
+    <div className="text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        Need Professional Bookkeeping Support?
+      </h2>
+      <p className="text-gray-300 mb-6 leading-relaxed">
+        Our experienced accounting professionals help you maintain accurate books,
+        stay compliant with GST & Income Tax laws, and make smarter financial decisions.
+      </p>
 
-          <div className="grid gap-1">
-            <label className="text-sm font-medium text-gray-700">
-              Message (Optional)
-            </label>
-            <textarea
-              name="message"
-              onChange={handleChange}
-              placeholder="Any specific bookkeeping query?"
-              rows={4}
-              className="border border-gray-300 p-3.5 rounded-lg focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none"
-            />
-          </div>
+      <ul className="space-y-3 text-gray-200 text-sm">
+        <li>✔ Dedicated bookkeeping expert</li>
+        <li>✔ Monthly & quarterly financial reports</li>
+        <li>✔ GST & ITR ready accounts</li>
+        <li>✔ Confidential & secure handling</li>
+      </ul>
+    </div>
 
-          <button
-            type="submit"
-            className="mt-4 bg-[#D4AF37] text-[#0B1C2D] py-3.5 rounded-xl font-semibold hover:bg-yellow-400 transition flex items-center justify-center gap-2 shadow-md"
-          >
-            <Send size={18} /> Get Expert Assistance
-          </button>
+    {/* RIGHT CTA CARD */}
+    <div className="bg-white rounded-3xl p-10 shadow-2xl text-center">
+      <h3 className="text-2xl font-bold text-[#0B1C2D] mb-4">
+        Talk to Our Accounting Expert
+      </h3>
+      <p className="text-gray-600 mb-6 text-sm">
+        Click below to share your requirements and our team will contact you shortly.
+      </p>
 
-          <p className="text-xs text-center text-gray-500 mt-2">
-            🔒 Your data is fully confidential and secure.
-          </p>
-        </form>
-      </section>
+      <a
+        href="/contact"
+        className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-[#0B1C2D] px-8 py-3 rounded-xl font-semibold hover:bg-yellow-400 transition shadow-md"
+      >
+        <PhoneCall size={18} />
+        Go to Contact Page
+      </a>
+
+      <p className="text-xs text-gray-500 mt-4">
+        🔒 Your business information is safe with us
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* ===== FINAL CTA ===== */}
       <section className="bg-[#0B1C2D] text-white py-20 text-center px-6">

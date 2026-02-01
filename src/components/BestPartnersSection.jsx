@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function BestPartnersSection() {
   return (
@@ -9,12 +8,7 @@ export default function BestPartnersSection() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
 
         {/* ===== LEFT CONTENT ===== */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           {/* Tags */}
           <div className="flex gap-4 mb-6">
             <span className="px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
@@ -45,24 +39,19 @@ export default function BestPartnersSection() {
           <button className="bg-[#0B1C2D] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#132f4c] transition">
             Learn More
           </button>
-        </motion.div>
+        </div>
 
         {/* ===== RIGHT IMAGE ===== */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative w-full h-[420px] rounded-3xl overflow-hidden shadow-xl"
-        >
+        <div className="relative w-full h-[420px] rounded-3xl overflow-hidden shadow-xl">
           <Image
-            src="/images/partners.jpg"  // 👉 image public/images/partners.jpg me rakho
+            src="/images/partners.webp"
             alt="Our Partners"
             fill
             className="object-cover"
             priority
+            unoptimized
           />
-        </motion.div>
+        </div>
 
       </div>
     </section>

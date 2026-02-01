@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Users,
@@ -82,12 +81,8 @@ export default function WhyZamexoSection() {
           {features.map((f, i) => {
             const Icon = f.icon;
             return (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="bg-white rounded-2xl border shadow-lg p-6 hover:shadow-xl transition"
               >
                 <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
@@ -99,7 +94,7 @@ export default function WhyZamexoSection() {
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {f.desc}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

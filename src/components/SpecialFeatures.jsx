@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "framer-motion";
 import {
   FileText,
   MessageCircle,
@@ -68,12 +66,8 @@ export default function SpecialFeatures() {
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
               className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition"
             >
               <item.icon className="text-[#D4AF37] mb-5" size={36} />
@@ -83,7 +77,7 @@ export default function SpecialFeatures() {
               <p className="text-sm text-gray-600 leading-relaxed">
                 {item.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 

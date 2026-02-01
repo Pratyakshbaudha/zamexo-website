@@ -76,13 +76,22 @@ export default function Footer() {
 
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-[#D4AF37]" />
-              <span>+91 9XXXXXXXXX</span>
+              <span>+91 9410269960, +91 9560394109</span>
             </li>
 
-            <li className="flex items-center gap-2">
-              <Mail size={16} className="text-[#D4AF37]" />
-              <span>support@zamexo.com</span>
-            </li>
+           <li className="flex items-center gap-2">
+  <Mail size={16} className="text-[#D4AF37]" />
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@zamexo.in"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline text-white"
+  >
+    info@zamexo.in
+  </a>
+</li>
+
+
           </ul>
 
           <Link

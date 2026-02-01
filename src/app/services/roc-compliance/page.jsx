@@ -160,64 +160,101 @@ export default function ROCFilingsPage() {
       </section>
 
       {/* ===== LEAD FORM ===== */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-3">
-            Check Your ROC Compliance Status
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Not sure whether your filings are complete? Submit details and our
-            compliance expert will review your status.
+     {/* ===== CONSULTATION INFO CARD (NO FORM) ===== */}
+<section className="bg-gray-50 py-24 px-6">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+    {/* LEFT CONTENT */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1C2D] mb-6">
+        Get Expert Help for ROC Filings & Compliance
+      </h2>
+
+      <p className="text-gray-600 text-lg leading-relaxed mb-6">
+        Confused about ROC compliance or worried about penalties? ZAMEXO’s
+        Chartered Accountants help you manage all ROC filings, annual returns,
+        and event-based compliances accurately and on time.
+      </p>
+
+      <ul className="space-y-4 text-gray-700">
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          ROC filings handled by experienced CAs
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          Avoid late fees, penalties & disqualification
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          Complete annual & event-based compliance
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-[#D4AF37] text-xl">✔</span>
+          Pan-India online ROC compliance support
+        </li>
+      </ul>
+    </div>
+
+    {/* RIGHT CARD */}
+    <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
+      <h3 className="text-2xl font-bold text-[#0B1C2D] mb-4">
+        Free ROC Compliance Consultation
+      </h3>
+
+      <p className="text-gray-600 leading-relaxed mb-6">
+        Speak directly with our ROC compliance experts to understand your
+        pending filings, risk exposure, and the best strategy to stay compliant
+        with MCA regulations.
+      </p>
+
+      <div className="space-y-4 mb-8">
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            AOC-4, MGT-7 / MGT-7A & DIR-3 KYC
           </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-xl grid gap-5"
-        >
-          {[
-            ["name", "Full Name"],
-            ["email", "Email Address"],
-            ["phone", "Mobile Number"],
-            ["company", "Company Name"],
-          ].map((f, i) => (
-            <div key={i} className="grid gap-1">
-              <label className="text-sm font-medium text-gray-700">{f[1]}</label>
-              <input
-                name={f[0]}
-                onChange={handleChange}
-                placeholder={`Enter your ${f[1].toLowerCase()}`}
-                className="border border-gray-300 p-3.5 rounded-lg focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none"
-                required
-              />
-            </div>
-          ))}
-
-          <div className="grid gap-1">
-            <label className="text-sm font-medium text-gray-700">
-              Message (Optional)
-            </label>
-            <textarea
-              name="message"
-              onChange={handleChange}
-              placeholder="Any specific ROC issue or pending compliance?"
-              rows={4}
-              className="border border-gray-300 p-3.5 rounded-lg focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="mt-4 bg-[#D4AF37] text-[#0B1C2D] py-3.5 rounded-xl font-semibold hover:bg-yellow-400 transition flex items-center justify-center gap-2 shadow-md"
-          >
-            <Send size={18} /> Get Compliance Check
-          </button>
-
-          <p className="text-xs text-center text-gray-500 mt-2">
-            🔒 Your details are secure & confidential.
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            Auditor appointment & director changes
           </p>
-        </form>
-      </section>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="w-2.5 h-2.5 bg-[#D4AF37] rounded-full" />
+          <p className="text-gray-700">
+            Complete MCA filing & acknowledgment support
+          </p>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a
+          href="/contact"
+          className="flex-1 text-center bg-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-yellow-400 transition"
+        >
+          Talk to ROC Expert
+        </a>
+
+        <a
+          href="tel:+91XXXXXXXXXX"
+          className="flex-1 text-center border border-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-[#D4AF37]/10 transition"
+        >
+          Call Now
+        </a>
+      </div>
+
+      <p className="text-xs text-gray-500 mt-6 text-center">
+        🔒 100% Confidential | No Obligation | CA-Verified Guidance
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* ===== FINAL CTA ===== */}
       <section className="bg-[#0B1C2D] text-white py-20 text-center px-6">

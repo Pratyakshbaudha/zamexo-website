@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import {
   Target,
   Eye,
@@ -19,66 +19,51 @@ export default function AboutPage() {
 
       {/* HERO */}
       <section className="bg-[#0B1C2D] text-white py-24 text-center px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4"
-        >
-          About ZAMEXO Tax Solutions
-        </motion.h1>
-        <p className="max-w-3xl mx-auto text-gray-300 text-lg">
-          Building India’s most trusted Pan-India Tax & Compliance Network for individuals, startups, and businesses. Empowering entrepreneurs with expert support, technology, and nationwide reach.
-        </p>
-      </section>
+  <h1 className="text-4xl md:text-5xl font-bold mb-4">
+    About ZAMEXO Tax Solutions
+  </h1>
+  <p className="max-w-3xl mx-auto text-gray-300 text-lg">
+    Building India’s most trusted Pan-India Tax & Compliance Network for individuals, startups, and businesses. Empowering entrepreneurs with expert support, technology, and nationwide reach.
+  </p>
+</section>
 
-      {/* WHO WE ARE */}
-      <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-14 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-[#0B1C2D] mb-4">Who We Are</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-4">
-            ZAMEXO Tax Solutions is a premier tax, accounting, and compliance platform designed to simplify GST, Income Tax, Company Registration, ROC filings, Payroll, PF/ESIC, and bookkeeping services for businesses across India.
-          </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-4">
-            Our mission is to make compliance easy, affordable, and reliable by connecting clients with verified Chartered Accountants, Company Secretaries, and legal experts through a centralized service ecosystem.
-          </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Founded by experienced industry professionals, ZAMEXO combines deep domain knowledge, technology-driven solutions, and a Pan-India presence to serve startups, SMEs, and large enterprises with unmatched reliability.
-          </p>
-        </motion.div>
+{/* WHO WE ARE */}
+<section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-14 items-center">
+  <div>
+    <h2 className="text-3xl font-bold text-[#0B1C2D] mb-4">Who We Are</h2>
+    <p className="text-gray-600 text-lg leading-relaxed mb-4">
+      ZAMEXO Tax Solutions is a premier tax, accounting, and compliance platform designed to simplify GST, Income Tax, Company Registration, ROC filings, Payroll, PF/ESIC, and bookkeeping services for businesses across India.
+    </p>
+    <p className="text-gray-600 text-lg leading-relaxed mb-4">
+      Our mission is to make compliance easy, affordable, and reliable by connecting clients with verified Chartered Accountants, Company Secretaries, and legal experts through a centralized service ecosystem.
+    </p>
+    <p className="text-gray-600 text-lg leading-relaxed">
+      Founded by experienced industry professionals, ZAMEXO combines deep domain knowledge, technology-driven solutions, and a Pan-India presence to serve startups, SMEs, and large enterprises with unmatched reliability.
+    </p>
+  </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid sm:grid-cols-2 gap-6"
-        >
-          {[ 
-            { icon: Users, title: "Expert Professionals", desc: "Team of CA, CS & Legal Advisors" },
-            { icon: ShieldCheck, title: "100% Compliance", desc: "Accurate & legally compliant services" },
-            { icon: MapPin, title: "Pan-India Network", desc: "Presence across 30+ cities" },
-            { icon: Award, title: "Quality Assurance", desc: "Centralized review & audit system" },
-          ].map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <div key={i} className="bg-gray-50 p-6 rounded-xl border shadow-sm">
-                <Icon className="text-[#D4AF37] mb-3" size={28} />
-                <h4 className="font-semibold mb-1">{item.title}</h4>
-                <p className="text-sm text-gray-600">{item.desc}</p>
-              </div>
-            );
-          })}
-        </motion.div>
-      </section>
+  <div className="grid sm:grid-cols-2 gap-6">
+    {[ 
+      { icon: Users, title: "Expert Professionals", desc: "Team of CA, CS & Legal Advisors" },
+      { icon: ShieldCheck, title: "100% Compliance", desc: "Accurate & legally compliant services" },
+      { icon: MapPin, title: "Pan-India Network", desc: "Presence across 30+ cities" },
+      { icon: Award, title: "Quality Assurance", desc: "Centralized review & audit system" },
+    ].map((item, i) => {
+      const Icon = item.icon;
+      return (
+        <div key={i} className="bg-gray-50 p-6 rounded-xl border shadow-sm">
+          <Icon className="text-[#D4AF37] mb-3" size={28} />
+          <h4 className="font-semibold mb-1">{item.title}</h4>
+          <p className="text-sm text-gray-600">{item.desc}</p>
+        </div>
+      );
+    })}
+  </div>
+</section>
 
-      {/* MISSION VISION VALUES */}
-     <section className="bg-gray-50 py-24">
+
+    {/* MISSION VISION VALUES */}
+<section className="bg-gray-50 py-24">
   <div className="max-w-7xl mx-auto px-6">
     <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#0B1C2D]">
       Our Mission, Vision & Core Values
@@ -119,12 +104,8 @@ export default function AboutPage() {
       ].map((v, i) => {
         const Icon = v.icon;
         return (
-          <motion.div
+          <div
             key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
             className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center transform transition hover:-translate-y-3 hover:shadow-2xl hover:border-[#D4AF37] duration-500"
           >
             <div className="w-16 h-16 mx-auto bg-yellow-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition duration-500">
@@ -132,13 +113,12 @@ export default function AboutPage() {
             </div>
             <h4 className="font-semibold text-xl mb-4 text-[#0B1C2D] group-hover:text-[#D4AF37] transition duration-500">{v.title}</h4>
             <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
-          </motion.div>
+          </div>
         );
       })}
     </div>
   </div>
 </section>
-
       {/* FOUNDER EXPERIENCE */}
       <section className="max-w-7xl mx-auto px-6 py-28 space-y-28">
 
@@ -164,7 +144,7 @@ export default function AboutPage() {
 
    <div className="flex justify-center overflow-hidden rounded-3xl">
   <img
-    src="/images/founder-1.jpg"
+    src="/images/founder-1.webp"
     alt="Professional Expertise"
     className="rounded-3xl shadow-2xl w-full max-w-md transform transition duration-500 hover:scale-110"
   />
@@ -175,7 +155,7 @@ export default function AboutPage() {
   <div className="grid lg:grid-cols-2 gap-14 items-center">
     <div className="order-2 lg:order-1 flex justify-center overflow-hidden rounded-3xl">
   <img
-    src="/images/founder-2.jpg"
+    src="/images/founder-2.webp"
     alt="Business Advisory Experience"
     className="w-full max-w-md rounded-3xl shadow-2xl transform transition duration-500 ease-out hover:scale-110"
   />
@@ -236,7 +216,7 @@ export default function AboutPage() {
 
     <div className="flex justify-center">
       <img
-        src="/images/founder-3.jpg"
+        src="/images/founder-3.webp"
         alt="Growth Vision"
         className="rounded-3xl shadow-2xl w-full max-w-md"
       />
@@ -269,7 +249,7 @@ export default function AboutPage() {
       {/* IMAGE */}
       <div className="flex justify-center">
         <img
-          src="/images/professional-team.jpg"
+          src="/images/professional-team.webp"
           alt="CA CS Advocate Support Network"
           className="rounded-3xl shadow-2xl w-full max-w-xl"
         />
@@ -402,14 +382,14 @@ export default function AboutPage() {
 
         <div className="flex justify-center gap-4 flex-wrap">
           <a
-            href="/services"
+            href="/services/individual"
             className="bg-[#D4AF37] text-[#0B1C2D] px-8 py-3 rounded-xl font-semibold hover:bg-yellow-400 transition"
           >
             Explore Services
           </a>
 
           <a
-            href="/franchise"
+            href="#"
             className="border border-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#0B1C2D] transition"
           >
             Become a Franchise Partner

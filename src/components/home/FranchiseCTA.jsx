@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Building2,
   TrendingUp,
@@ -8,7 +7,6 @@ import {
   Users,
   BadgeCheck,
   Wallet,
-  ArrowRight,
   Briefcase,
   GraduationCap,
   Store,
@@ -56,15 +54,10 @@ export default function FranchiseInvitationPage() {
       <section className="relative bg-gradient-to-br from-[#071422] to-[#0B1C2D] text-white py-32 px-4">
         <div className="max-w-6xl mx-auto text-center">
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight"
-          >
-            Join India’s Fastest Growing  
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            Join India’s Fastest Growing
             <span className="text-[#D4AF37]"> Tax & Compliance Franchise Network</span>
-          </motion.h1>
+          </h1>
 
           <p className="max-w-3xl mx-auto text-gray-300 text-lg">
             Start your own profitable business with ZAMEXO and deliver professional
@@ -140,12 +133,8 @@ export default function FranchiseInvitationPage() {
             {benefits.map((b, i) => {
               const Icon = b.icon;
               return (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
                   className="bg-white border rounded-3xl shadow-lg p-8 hover:shadow-2xl transition"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6">
@@ -154,7 +143,7 @@ export default function FranchiseInvitationPage() {
 
                   <h3 className="font-bold text-xl mb-3 text-[#0B1C2D]">{b.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>

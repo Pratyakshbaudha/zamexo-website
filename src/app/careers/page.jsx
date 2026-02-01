@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
   Briefcase,
   GraduationCap,
@@ -28,7 +29,10 @@ const jobs = [
   },
 ];
 
+
+
 export default function CareersPage() {
+  const router = useRouter();
   return (
     <main className="bg-white">
 
@@ -98,78 +102,119 @@ export default function CareersPage() {
 
       {/* OPEN POSITIONS */}
       <section className="bg-gray-50 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14 text-[#0B1C2D]">
-            Current Openings
-          </h2>
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-14 text-[#0B1C2D]">
+      Current Openings
+    </h2>
 
-          <div className="space-y-6">
-            {jobs.map((job, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white border rounded-xl p-6 flex flex-col md:flex-row md:items-center md:justify-between shadow"
-              >
-                <div>
-                  <h4 className="font-semibold text-lg">{job.title}</h4>
-                  <p className="text-sm text-gray-600 mt-1">
-                    {job.type} • {job.location}
-                  </p>
-                </div>
-                <button className="mt-4 md:mt-0 bg-[#0B1C2D] text-white px-6 py-2 rounded-lg hover:bg-[#132f4c] transition">
-                  Apply Now
-                </button>
-              </motion.div>
-            ))}
+    <div className="space-y-6">
+      {[
+        { title: "Senior Tax Consultant", type: "Full-Time", location: "Mumbai" },
+        { title: "GST Filing Executive", type: "Full-Time", location: "Delhi" },
+        { title: "Accounting Specialist", type: "Part-Time", location: "Bangalore" },
+        { title: "Startup Compliance Officer", type: "Full-Time", location: "Hyderabad" },
+        { title: "CA / CS Assistant", type: "Internship", location: "Pune" },
+        { title: "Payroll Executive", type: "Full-Time", location: "Chennai" },
+        { title: "ITR Filing Expert", type: "Full-Time", location: "Kolkata" },
+        { title: "MSME Consultant", type: "Part-Time", location: "Ahmedabad" },
+        { title: "Legal Compliance Officer", type: "Full-Time", location: "Noida" },
+        { title: "Business Development Associate", type: "Full-Time", location: "Bangalore" },
+      ].map((job, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: i * 0.1 }}
+          className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col md:flex-row md:items-center md:justify-between shadow-lg hover:shadow-2xl transition"
+        >
+          {/* Job Details */}
+          <div>
+            <h4 className="font-semibold text-lg md:text-xl text-gray-900">
+              {job.title}
+            </h4>
+            <p className="text-sm md:text-base text-gray-600 mt-1">
+              {job.type} • {job.location}
+            </p>
           </div>
-        </div>
-      </section>
+
+          {/* Apply Button */}
+          
+          <button
+  onClick={() => router.push("/contact")} // 👉 content page route
+  className="mt-4 md:mt-0 bg-gradient-to-r from-[#D4AF37] to-[#b9922c]
+             text-[#0B1C2D] px-6 py-3 rounded-lg font-semibold transition
+             shadow-md hover:from-[#b9922c] hover:to-[#D4AF37] hover:shadow-lg"
+>
+  Apply Now
+</button>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* TRAINING & INTERNSHIP */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-14 items-center">
-        <div>
-          <h2 className="text-3xl font-bold mb-4 text-[#0B1C2D]">
-            Training & Internship Programs
-          </h2>
-          <p className="text-gray-600 text-lg mb-4">
-            ZAMEXO offers structured training and internship programs for
-            commerce and finance students to gain real-world tax and compliance
-            experience.
-          </p>
-          <ul className="space-y-2 text-gray-600">
-            <li>✔ Practical GST & ITR training</li>
-            <li>✔ Company compliance exposure</li>
-            <li>✔ Certification after completion</li>
-            <li>✔ Opportunity for full-time roles</li>
-          </ul>
-        </div>
+  {/* Left Content */}
+  <div>
+    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+      Training & Internship Programs
+    </h2>
+    <p className="text-gray-700 text-lg mb-4">
+      ZAMEXO offers structured training and internship programs for commerce and finance
+      students to gain real-world tax and compliance experience.
+    </p>
+    <ul className="space-y-2 text-gray-700">
+      <li>✔ Practical GST & ITR training</li>
+      <li>✔ Company compliance exposure</li>
+      <li>✔ Certification after completion</li>
+      <li>✔ Opportunity for full-time roles</li>
+    </ul>
+  </div>
 
-        <div className="bg-gray-50 border rounded-2xl p-8 shadow">
-          <h4 className="font-semibold text-lg mb-4">
-            Apply for Internship / Training
-          </h4>
+  {/* Right Form */}
+  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-lg">
+    <h4 className="font-semibold text-lg mb-4 text-gray-900">
+      Apply for Internship / Training
+    </h4>
 
-          <form className="grid gap-4">
-            <input className="border p-3 rounded" placeholder="Full Name" />
-            <input className="border p-3 rounded" placeholder="Email" />
-            <input className="border p-3 rounded" placeholder="Mobile Number" />
-            <input className="border p-3 rounded" placeholder="City" />
-            <select className="border p-3 rounded">
-              <option>Select Program</option>
-              <option>GST Training</option>
-              <option>ITR Training</option>
-              <option>Compliance Internship</option>
-            </select>
+    <form className="grid gap-4">
+      <input
+        placeholder="Full Name"
+        className="w-full border border-gray-300 bg-white p-3.5 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/40"
+      />
+      <input
+        placeholder="Email"
+        className="w-full border border-gray-300 bg-white p-3.5 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/40"
+      />
+      <input
+        placeholder="Mobile Number"
+        className="w-full border border-gray-300 bg-white p-3.5 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/40"
+      />
+      <input
+        placeholder="City"
+        className="w-full border border-gray-300 bg-white p-3.5 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/40"
+      />
+      <select
+        className="w-full border border-gray-300 bg-white p-3.5 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/40"
+      >
+        <option value="">Select Program</option>
+        <option>GST Training</option>
+        <option>ITR Training</option>
+        <option>Compliance Internship</option>
+      </select>
 
-            <button className="bg-[#D4AF37] text-[#0B1C2D] py-3 rounded-xl font-semibold hover:bg-yellow-400 transition flex items-center justify-center gap-2">
-              <Send size={18} /> Submit Application
-            </button>
-          </form>
-        </div>
-      </section>
+      <button
+        type="submit"
+        className="bg-gradient-to-r from-[#D4AF37] to-[#b9922c] text-[#0B1C2D] py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-[#b9922c] hover:to-[#D4AF37] transition shadow-md hover:shadow-lg"
+      >
+        <Send size={18} /> Submit Application
+      </button>
+    </form>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="bg-gradient-to-r from-[#0B1C2D] to-[#1e3a5f] text-white py-20 text-center px-6">

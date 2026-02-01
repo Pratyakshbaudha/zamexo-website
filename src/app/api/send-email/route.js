@@ -252,6 +252,10 @@ export const runtime = "nodejs";
 
 export async function POST(request) {
   try {
+    console.log(
+      "ENV LOADED:",
+      !!process.env.EMAIL_PASSWORD
+    );
     const body = await request.json();
 
     const {
@@ -275,6 +279,7 @@ export async function POST(request) {
         user: "info@zamexo.in",
         pass: process.env.EMAIL_PASSWORD,
       },
+      
     });
 
     // ✅ HARD CHECK (debug)

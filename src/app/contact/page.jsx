@@ -86,22 +86,26 @@ export default function ContactPage() {
         {/* LEFT */}
         <div className="space-y-8">
           <div className="rounded-3xl overflow-hidden shadow-xl h-[420px]">
-            <iframe
-              src="https://www.google.com/maps?q=Sector+62+Noida&output=embed"
-              className="w-full h-full border-0"
-              loading="lazy"
-            />
-          </div>
+    <iframe
+      src="https://www.google.com/maps?q=28.7589933,77.498752&z=17&output=embed"
+      className="w-full h-full border-0"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
 
           <div className="bg-white rounded-2xl shadow p-6 border-l-4 border-[#D4AF37]">
             <h3 className="text-xl font-bold text-[#0B1C2D] mb-2">
               Head Office
             </h3>
-            <p className="text-gray-600 text-sm">
-              ZAMEXO Tax Solutions Pvt. Ltd. <br />
-              Sector 62, Noida – 201309 <br />
-              Email: <b>info@zamexo.in</b>
-            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+  <b>ZAMEXO Tax Solutions Pvt. Ltd.</b> <br />
+  Opp. OFM Gate, Near Bachpan School <br />
+  Dagar Vihar, Muradnagar, Ghaziabad (GZB) <br />
+  Uttar Pradesh – 201206 <br />
+  Email: <b>info@zamexo.in</b>
+</p>
+
           </div>
         </div>
 
@@ -178,7 +182,43 @@ export default function ContactPage() {
             </button>
           </form>
         </div>
+
+        
       </section>
+      {/* BRANCH OFFICE SECTION */}
+<section className="max-w-7xl mx-auto px-6 pb-20">
+  <div className="bg-white rounded-3xl shadow-xl p-10">
+    <h2 className="text-3xl font-bold text-[#0B1C2D] text-center mb-10">
+      Branch Office
+    </h2>
+
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* LEFT – MAP (Same Size as Head Office Map) */}
+      <div className="rounded-3xl overflow-hidden shadow-xl h-[420px]">
+        <iframe
+          src="https://www.google.com/maps?q=28.6729121,77.441311&z=17&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+
+      {/* RIGHT – ADDRESS */}
+      <div className="bg-gray-50 rounded-2xl p-8 border-l-4 border-[#D4AF37]">
+        <h3 className="text-xl font-bold text-[#0B1C2D] mb-4">
+          ZAMEXO Tax Solutions Pvt. Ltd.
+        </h3>
+
+        <p className="text-gray-600 text-sm leading-relaxed">
+          GF-309, Sumangal Ansal Building <br />
+          RDC, Ghaziabad <br />
+          Uttar Pradesh – 201001
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
   );
 }

@@ -69,9 +69,15 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               <MapPin size={16} className="text-[#D4AF37] mt-1" />
               <span>
-                Head Office: New Delhi, India <br />
-                (Pan India Services)
-              </span>
+  Head Office: New Delhi, India <br />
+  (Pan India Services) <br /><br />
+
+  <b>Corporate Office:</b> <br />
+  Opp. OFM Gate, Near Bachpan School <br />
+  Dagar Vihar, Muradnagar, Ghaziabad (GZB) <br />
+  Uttar Pradesh – 201206
+</span>
+
             </li>
 
             <li className="flex items-center gap-2">
@@ -87,7 +93,7 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="hover:underline text-white"
   >
-    info@zamexo.in
+    zamexotax@gmail.com
   </a>
 </li>
 

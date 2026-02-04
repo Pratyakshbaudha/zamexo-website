@@ -62,7 +62,7 @@ export default function Navbar() {
   <Link href="/" className="flex items-center gap-2 pt-2">
   <Image
     className="mt-1 "
-    src="/images/logo-light2.png"
+    src="/images/logo-light.webp"
     alt="Zamexo Logo"
     width={130}
     height={70}
